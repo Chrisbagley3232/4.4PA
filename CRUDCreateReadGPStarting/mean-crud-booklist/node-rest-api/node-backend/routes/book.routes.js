@@ -14,4 +14,14 @@ bookRoute.route('/').get((req, res) => {
   })
 })
 
+// Add a book
+bookRoute.route('/add-book').post((req, res) =>{
+  Book.create(req.body).then(() =>{
+    console.log('Book added successfully.');
+  })
+  .catch((error) =>{
+    console.error(`Could not save book: ${error}`);
+  })
+})
+
 module.exports = bookRoute;
