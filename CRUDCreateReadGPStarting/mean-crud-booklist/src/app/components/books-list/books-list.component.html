@@ -12,6 +12,7 @@
             <th scope="col">Title</th>
             <th scope="col">Author</th>
             <th scope="col">Description</th>
+            <th scope="col1">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -21,6 +22,9 @@
             <td>{{book.title}}</td>
             <td>{{book.author}}</td>
             <td>{{book.description}}</td>
+            <td class="text-center">
+              <button class="btn btn-sm btn-primary" (click)="onDelete(book._id)">Delete</button>
+            </td>
           </tr>
         </tbody>
       </table>
