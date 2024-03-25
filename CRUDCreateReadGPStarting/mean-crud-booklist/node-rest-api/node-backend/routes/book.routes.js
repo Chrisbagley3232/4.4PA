@@ -36,4 +36,17 @@ bookRoute.route('/delete-book/:id').delete((req, res) =>{
   })
 })
 
+//Update a book
+bookRoute.route('/update-book/:id').put((req, res)=>{
+  console.log(`Preparing to update: ${req.params.id}`);
+  Book.findByIdAndUpdate(req.params.id, req.body, {new:true}).then((updateBook) =>{
+    console.log('Book updated succesfully');
+    res.status(200).json(updateBook);
+  })
+  .catch((error) =>{
+    console.error(`Could not update book`)
+  })
+})
+
+
 module.exports = bookRoute;

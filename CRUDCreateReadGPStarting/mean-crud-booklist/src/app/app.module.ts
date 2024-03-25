@@ -9,12 +9,14 @@ import { BooksListComponent } from './components/books-list/books-list.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddBookComponent } from './components/add-book/add-book.component';
+import { UpdateBookComponent } from './components/update-book/update-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BooksListComponent,
-    AddBookComponent
+    AddBookComponent,
+    UpdateBookComponent,
   ],
   imports: [
     BrowserModule,

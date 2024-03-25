@@ -40,6 +40,24 @@ export class CrudService {
         catchError(this.handleError)
       );
   }
+  
+  // Update
+  UpdateBook(id:any, data:Book): Observable<any>{
+    let API_URL = `${this.REST_API}/update-book/${id}`;
+    return this.httpClient.put(API_URL, data, { headers: this.httpHeaders})
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  // Get a specific book by ID
+  GetBookById(id:any): Observable<any>{
+    let API_URL = `${this.REST_API}/${id}`;
+    return this.httpClient.get(API_URL)
+      .pipe(
+        catchError(this.handleError)
+      );
+  } 
  
   // Error 
   handleError(error: HttpErrorResponse) {
